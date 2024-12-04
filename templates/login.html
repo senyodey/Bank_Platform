@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <title>Login</title>
+  </head>
+  <body>
+    <h1>Login to Account</h1>
+    <form method="POST">
+      <label>Account Number:</label>
+      <input type="text" name="account_number" required />
+      <button type="submit">Login</button>
+    </form>
+  </body>
+</html>

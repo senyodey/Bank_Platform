@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <title>Create New Account</title>
+  </head>
+  <body>
+    <h1>Create New Account</h1>
+    <form method="POST">
+      <label>Name:</label>
+      <input type="text" name="name" required />
+      <label>Account Number:</label>
+      <input type="text" name="account_number" required />
+      <label>Initial Balance (GH₵):</label>
+      <input type="number" name="balance" step="0.01" required />
+      <button type="submit">Create Account</button>
+    </form>
+  </body>
+</html>

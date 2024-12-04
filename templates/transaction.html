@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <title>Transactions</title>
+  </head>
+  <body>
+    <h1>Welcome, {{ name }}</h1>
+    <h3>Balance: GH₵ {{ balance }}</h3>
+    <form method="POST" action="/transactions">
+      <label>Amount (GH₵):</label>
+      <input type="number" name="amount" step="0.01" required />
+      <br />
+      <label
+        ><input type="radio" name="option" value="deposit" /> Deposit</label
+      >
+      <label
+        ><input type="radio" name="option" value="withdraw" /> Withdraw</label
+      >
+      <label><input type="radio" name="option" value="loan" /> Take Loan</label>
+      <br />
+      <button type="submit">Proceed</button>
+    </form>
+    {% with messages = get_flashed_messages() %} {% if messages %}
+    <ul>
+      {% for message in messages %}
+      <li>{{ message }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %} {% endwith %}
+  </body>
+</html>
